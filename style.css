@@ -1,1 +1,52 @@
-body { font-family: sans-serif; background: #111; color: #fff; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.login-page, .game-page {
+  padding: 40px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.message {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #00e676;
+}

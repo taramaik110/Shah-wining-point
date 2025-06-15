@@ -1,1 +1,29 @@
-<!DOCTYPE html><html><head><title>Shah Royal Game</title></head><body><h1>Welcome to Shah Royal Box Game</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shah Wining Point</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-page" id="loginPage">
+    <h2>Welcome to Shah Wining Point</h2>
+    <input type="text" placeholder="Enter Your Name" id="username"/>
+    <button onclick="enterGame()">Enter Game</button>
+  </div>
+
+  <div class="game-page" id="gamePage" style="display:none;">
+    <h2 id="greeting"></h2>
+    <div class="box-container" id="boxContainer"></div>
+    <p id="message" class="message"></p>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
