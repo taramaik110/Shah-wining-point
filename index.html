@@ -1,29 +1,15 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shah Wining Point</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Login - Shah Wining Point</title>
 </head>
-<body>
-  <div class="login-page" id="loginPage">
-    <h2>Welcome to Shah Wining Point</h2>
-    <input type="text" placeholder="Enter Your Name" id="username"/>
-    <button onclick="enterGame()">Enter Game</button>
-  </div>
-
-  <div class="game-page" id="gamePage" style="display:none;">
-    <h2 id="greeting"></h2>
-    <div class="box-container" id="boxContainer"></div>
-    <p id="message" class="message"></p>
-    <audio id="bgMusic" loop>
-      <source src="music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
-  <script src="script.js"></script>
+<body style="background:#000;color:#fff;text-align:center;padding-top:100px;">
+  <h1>Login to Shah Wining Point</h1>
+  <form action="game.html">
+    <input type="text" placeholder="Enter Phone Number" required /><br><br>
+    <input type="password" placeholder="Enter Password" required /><br><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="signup.html" style="color:#0ff;">Sign up</a></p>
 </body>
 </html>

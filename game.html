@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎁 Shah G Gift Draw</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
+      margin-top: 30px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 10px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .box {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .inner-box {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .box.opened .inner-box {
+      transform: rotateY(180deg);
+    }
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .front {
+      background: linear-gradient(135deg, #ff6699, #ff3366);
+      box-shadow: 0 0 12px #ff3366;
+      color: white;
+    }
+    .back {
+      background: #00cc99;
+      transform: rotateY(180deg);
+      color: #fff;
+      box-shadow: 0 0 12px #00cc99;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #ff66cc;
+      display: none;
+      animation: shine 2s infinite;
+    }
+    @keyframes shine {
+      0%, 100% {
+        text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+      }
+      50% {
+        text-shadow: 0 0 5px #ff99dd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎁 Shah G Lucky Gift Draw 🎁</h1>
+  <p>Ek box kholen aur apni kismat ka tohfa payen!</p>
+  <div class="grid" id="grid"></div>
+  <div class="message" id="message"></div>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    let opened = false;
+    for (let i = 1; i <= 100; i++) {
+      const box = document.createElement("div");
+      box.className = "box";
+      const inner = document.createElement("div");
+      inner.className = "inner-box";
+      const front = document.createElement("div");
+      front.className = "front";
+      front.innerHTML = "🎁";
+      const back = document.createElement("div");
+      back.className = "back";
+      back.innerHTML = i;
+      inner.appendChild(front);
+      inner.appendChild(back);
+      box.appendChild(inner);
+      box.addEventListener("click", () => {
+        if (opened) return;
+        box.classList.add("opened");
+        opened = true;
+        message.style.display = "block";
+        message.innerHTML = `✨ Aap ne <strong>${i}</strong> wala gift box khola! Best of Luck Tonight! 🌙`;
+      });
+      grid.appendChild(box);
+    }
+  </script>
+</body>
+</html>
